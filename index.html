@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="jquery.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+    <title>TIKET DISNEYLAND</title>
+  </head>
+  <script>
+      const tiket=()=>{
+          let umur=document.getElementById("umur").value;
+          let tinggi=document.getElementById("tinggi").value;
+          if (umur===""){
+              return alert("Umur Anda Tidak Mencukupi");
+          } else{if(umur < 1 && tinggi < 70) {
+                   return alert("Dilarang masuk")
+               }else if(umur >= 1 && umur <= 3 && tinggi < 70) {
+                   return alert(`Tarif Anda Rp.${30000}`)
+               }else if(umur >= 2 && umur <= 3 && tinggi > 70) {
+                   return alert(`Tarif Anda Rp.${30000} + ${10000} = Rp.${30000 + 10000}`)
+               }else if(umur < 7 && tinggi < 120) {
+                   return alert(`Tarif Anda Rp.${40000}`)
+               }else if(umur >= 4 && umur <= 7 && tinggi > 120) {
+                   return alert(`Tarif Anda Rp.${40000} + Rp.${15000} = Rp.${40000 + 15000}`)
+               }else if(umur < 10 && tinggi < 150) {
+                   return alert(`Tarif Anda Rp.${50000}`)
+               }else if(umur >= 8 && umur <= 10 && tinggi > 150) {
+                   return alert(`Tarif Anda Rp.${50000} + Rp.${20000} = Rp.${50000 + 20000}`)
+               }else {
+                   return alert(`Tarif Anda ${80000}`)
+               }   
+           }
+           document.getElementById("result").innerHTML = umur;
+           document.getElementById("result").innerHTML = tinggi;
+        }
+    </script>
+  <body>
+    
+      <div class="container">
+            <h4 class="text-center"> TIKET DISNEYLAND</h4>
+            <hr>
+                <div class="form-grup">
+                    <label for="">Umur</label>
+                    <input type="text" name="username" class="form-control" id="umur" placeholder="Masukan Umurmu">
+                </div> 
+                <div class="form-grup">
+                    <label for="">Tinggi</label>
+                    <input type="text" name="password" class="form-control" id="tinggi" placeholder="Masukan Tinggi Badanmu">
+                  </div>
+                <!-- <button type="submit" class="btn black-wheat-and-mortarboard mt-3" ></button> -->
+            </form>
+            <hr>
+            <input type="button" button class="btn btn-lg btn-success btn-block" onclick="tiket()" value="Button">
+        </div>   
+  </body>
+</html>
